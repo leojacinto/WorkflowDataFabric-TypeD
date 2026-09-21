@@ -1,4 +1,5 @@
 .env
+lab_assistant_approach.md
 *.local
 .DS_Store
 node_modules/
