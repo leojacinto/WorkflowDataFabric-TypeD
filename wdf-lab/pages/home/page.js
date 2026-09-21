@@ -4,6 +4,11 @@ import {AIUXElement} from '@servicenow/aiux/aiux-components-core';
 import {i18n} from '@servicenow/aiux/aiux-services';
 import {setDocumentTitle} from '../../utils/document-title.js';
 import {TOC_SECTIONS} from '../../constants/toc.js';
+import {
+  VIRTUAL_ON_HTML,
+  VIRTUAL_ON_CSS,
+  VIRTUAL_ON_JS
+} from './virtual-on-embed.js';
 
 const mainExercises = TOC_SECTIONS.find(s => s.id === 'main-exercises');
 const extendedExercises = TOC_SECTIONS.find(s => s.id === 'extended-exercises');
@@ -77,31 +82,31 @@ export default class HomePage extends AIUXElement {
     this._loadVirtualOnFrame();
   }
 
-  // The instance's static-asset host serves .html files as text/plain, so a
-  // plain <iframe src="..."> just displays the source. Fetching the markup
-  // and setting it as srcdoc renders it as real HTML regardless of the
-  // server's declared content type. srcdoc has no URL of its own, so a
-  // <base> tag is injected to make wide.html's relative references
-  // (wide.css, scene.js, and scene.js's own png reference) resolve against
-  // the asset folder instead of against this page's URL.
-  async _loadVirtualOnFrame() {
+  // The instance's static-asset host only serves image/font files from
+  // public/ -- .html/.css/.js requests 404 there, so wide.html/wide.css/
+  // scene.js can't be fetched at runtime. They're inlined verbatim (see
+  // virtual-on-embed.js) and assembled into the srcdoc here instead. srcdoc
+  // has no URL of its own, so a <base> tag is still needed for scene.js's
+  // relative png reference, which *is* servable from public/. The inlined
+  // script runs at the end of <body> (not <head>) because `defer` has no
+  // effect on scripts without a `src` attribute -- it needs the canvas and
+  // control elements already parsed before it runs.
+  _loadVirtualOnFrame() {
     const {basePath} = this.loaderData || {};
     const iframe = this.renderRoot?.querySelector('#virtual-on-frame');
     if (!iframe) return;
-    try {
-      const assetBase = `${basePath}/public/virtual-on/`;
-      const res = await fetch(`${assetBase}wide.html?v=${Date.now()}`, {
-        cache: 'no-store'
-      });
-      if (!res.ok) return;
-      const html = await res.text();
-      iframe.srcdoc = html.replace(
-        '<head>',
-        `<head><base href="${assetBase}">`
-      );
-    } catch {
-      // Non-critical: leave the iframe empty if the fetch fails.
-    }
+    const assetBase = `${basePath.replace(/^\/aiux/, '')}/public/virtual-on/`;
+    const html = VIRTUAL_ON_HTML.replace(
+      '<head>',
+      `<head><base href="${assetBase}"><style>${VIRTUAL_ON_CSS}</style>`
+    )
+      .replace('<link rel="stylesheet" href="wide.css">', '')
+      .replace(
+        '<script src="scene.js" defer></script>',
+        ''
+      )
+      .replace('</body>', `<script>${VIRTUAL_ON_JS}</script></body>`);
+    iframe.srcdoc = html;
   }
 
   static async loader(ctx) {
@@ -110,7 +115,8 @@ export default class HomePage extends AIUXElement {
 
   render() {
     const {basePath} = this.loaderData || {};
-    const asset = path => `${basePath}/public/wdf/home/${path}`;
+    const asset = path =>
+      `${basePath.replace(/^\/aiux/, '')}/public/wdf/home/${path}`;
 
     return html`
       <div class="mx-auto flex max-w-4xl flex-col gap-8 p-4 lg:p-8">

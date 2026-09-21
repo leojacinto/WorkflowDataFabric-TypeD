@@ -120,7 +120,7 @@ export default class DemoHubConsiderationsPage extends AIUXElement {
 
   render() {
     const {basePath} = this.loaderData || {};
-    const asset = path => `${basePath}/public/wdf/demo-hub/${path}`;
+    const asset = path => `${basePath.replace(/^\/aiux/, '')}/public/wdf/demo-hub/${path}`;
 
     const renderSteps = steps => html`
       <ol class="list-decimal space-y-4 pl-6 text-base text-text-secondary">

@@ -41,7 +41,7 @@ export default class KeyTakeawaysPage extends AIUXElement {
 
         <figure>
           <img
-            src="${basePath}/public/wdf/conclusion/sc_slide_key_takeaways.png"
+            src="${basePath.replace(/^\/aiux/, '')}/public/wdf/conclusion/sc_slide_key_takeaways.png"
             alt="${i18n.getMessage('Key takeaways summary slide')}"
             class="w-full rounded-xl border border-base-300"
           />

@@ -328,7 +328,7 @@ export default class LensAndDocumentIntelligencePage extends AIUXElement {
 
   render() {
     const {basePath} = this.loaderData || {};
-    const asset = path => `${basePath}/public/wdf/lens-and-document-intelligence/${path}`;
+    const asset = path => `${basePath.replace(/^\/aiux/, '')}/public/wdf/lens-and-document-intelligence/${path}`;
 
     const renderSteps = steps => html`
       <ol class="list-decimal space-y-4 pl-6 text-base text-text-secondary">

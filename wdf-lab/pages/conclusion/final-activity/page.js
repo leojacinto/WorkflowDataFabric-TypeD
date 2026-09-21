@@ -42,11 +42,11 @@ export default class FinalActivityPage extends AIUXElement {
         <figure>
           <picture>
             <source
-              srcset="${basePath}/public/wdf/conclusion/kahoot_hype_screen_dark.png"
+              srcset="${basePath.replace(/^\/aiux/, '')}/public/wdf/conclusion/kahoot_hype_screen_dark.png"
               media="(prefers-color-scheme: dark)"
             />
             <img
-              src="${basePath}/public/wdf/conclusion/kahoot_hype_screen_light.png"
+              src="${basePath.replace(/^\/aiux/, '')}/public/wdf/conclusion/kahoot_hype_screen_light.png"
               alt="${i18n.getMessage('Final Kahoot quiz activity')}"
               class="w-full rounded-xl border border-base-300"
             />

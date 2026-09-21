@@ -162,7 +162,7 @@ export default class FundamentalsPage extends AIUXElement {
 
   render() {
     const {basePath} = this.loaderData || {};
-    const asset = path => `${basePath}/public/wdf/fundamentals/${path}`;
+    const asset = path => `${basePath.replace(/^\/aiux/, '')}/public/wdf/fundamentals/${path}`;
 
     return html`
       <div class="mx-auto flex max-w-4xl flex-col gap-8 p-4 lg:p-8">
