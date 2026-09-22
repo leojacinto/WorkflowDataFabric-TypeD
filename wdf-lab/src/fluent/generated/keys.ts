@@ -297,6 +297,14 @@ declare global {
                         table: 'sys_module'
                         id: '3630114b7d714ec294565f9a7dc13f1b'
                     }
+                    studio_skills_assistant_agent: {
+                        table: 'sn_aia_agent'
+                        id: '116a31874a154caaa19a6f5270288c60'
+                    }
+                    studio_skills_assistant_agent_acl: {
+                        table: 'sys_security_acl'
+                        id: 'b119a3a707334b798092473bf93f298b'
+                    }
                     'virtual-on/square.css': {
                         table: 'sys_ux_theme_asset'
                         id: 'd0ec9bdc39924703a6eead1c89b9f8ee'
@@ -1648,6 +1656,46 @@ declare global {
                 }
                 composite: [
                     {
+                        table: 'sys_agent_access_role_configuration'
+                        id: '2a643bcbae8f4d98ad7cf3ab6b6a3494'
+                        key: {
+                            agent: '116a31874a154caaa19a6f5270288c60'
+                        }
+                    },
+                    {
+                        table: 'sn_aia_agent_tool_m2m'
+                        id: '482e1e067de44e2cb04751e8a77ec90a'
+                        key: {
+                            agent: '116a31874a154caaa19a6f5270288c60'
+                            tool: '6dc3a90d65e1468bb9fe7e6da868737c'
+                            name: 'BA Glide Tools Metadata Summarizer'
+                        }
+                    },
+                    {
+                        table: 'sn_aia_agent_tool_m2m'
+                        id: '5fdb962939bb4e5b89c07c66353ccd2c'
+                        key: {
+                            agent: '116a31874a154caaa19a6f5270288c60'
+                            tool: 'cef68c77803a45ebb6d16a617e28015c'
+                            name: 'Build Agent'
+                        }
+                    },
+                    {
+                        table: 'sn_aia_version'
+                        id: '6cb078ce382d4a5ebc117b1917e44a14'
+                        key: {
+                            target_id: '116a31874a154caaa19a6f5270288c60'
+                            version_name: 'V1'
+                        }
+                    },
+                    {
+                        table: 'sn_aia_tool'
+                        id: '6dc3a90d65e1468bb9fe7e6da868737c'
+                        key: {
+                            name: 'BA Glide Tools Metadata Summarizer'
+                        }
+                    },
+                    {
                         table: 'sn_glider_source_artifact_m2m'
                         id: '775fd2258ecd483b8333ca9c4d1afb6b'
                         key: {
@@ -1663,10 +1711,58 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_agent_access_role_mapping'
+                        id: '9a7305ea06ee4124ae97487077bcf9ca'
+                        key: {
+                            agent_access_config: {
+                                id: '2a643bcbae8f4d98ad7cf3ab6b6a3494'
+                                key: {
+                                    agent: '116a31874a154caaa19a6f5270288c60'
+                                }
+                            }
+                            role: {
+                                id: '1e276e14dabe4259a2d333918ea41f84'
+                                key: {
+                                    name: 'admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sn_aia_tool'
+                        id: 'a2b76340f6074c5fb2b4ce54b2f7b9a7'
+                        key: {
+                            name: 'Build Agent Preprocessor'
+                        }
+                    },
+                    {
+                        table: 'sn_aia_agent_tool_m2m'
+                        id: 'ab3e2a992596409ea5ac19eae8017cbf'
+                        key: {
+                            agent: '116a31874a154caaa19a6f5270288c60'
+                            tool: 'a2b76340f6074c5fb2b4ce54b2f7b9a7'
+                            name: 'Build Agent Preprocessor'
+                        }
+                    },
+                    {
                         table: 'sys_ux_lib_asset'
                         id: 'cbaeffb12efe4b758e1867885a313af0'
                         key: {
                             name: 'wdf-lab/public/virtual-on/scene'
+                        }
+                    },
+                    {
+                        table: 'sn_aia_tool'
+                        id: 'cef68c77803a45ebb6d16a617e28015c'
+                        key: {
+                            name: 'Build Agent'
+                        }
+                    },
+                    {
+                        table: 'sn_aia_agent_config'
+                        id: 'd2c747cff7744720b9a9273667c478b9'
+                        key: {
+                            agent: '116a31874a154caaa19a6f5270288c60'
                         }
                     },
                 ]
