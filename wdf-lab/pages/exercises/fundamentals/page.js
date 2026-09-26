@@ -3,6 +3,7 @@ import {customElement} from 'lit/decorators.js';
 import {AIUXElement} from '@servicenow/aiux/aiux-components-core';
 import {i18n} from '@servicenow/aiux/aiux-services';
 import {setDocumentTitle} from '../../../utils/document-title.js';
+import '../../../widgets/build-agent-chat.js';
 
 // `text` is a () => i18n.getMessage('<literal>') getter, not a raw string —
 // the build's static extractor only captures string literals passed
@@ -355,6 +356,9 @@ export default class FundamentalsPage extends AIUXElement {
             ${i18n.getMessage('Continue to Integration Hub')}
           </a>
         </section>
+
+        <wdf-build-agent-chat></wdf-build-agent-chat>
+
 
         <a class="aiux-btn aiux-btn-outline w-fit" href="${basePath}/home">
           ${i18n.getMessage('Take me back to main page')}

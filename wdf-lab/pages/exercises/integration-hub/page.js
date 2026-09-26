@@ -3,6 +3,7 @@ import {customElement} from 'lit/decorators.js';
 import {AIUXElement} from '@servicenow/aiux/aiux-components-core';
 import {i18n} from '@servicenow/aiux/aiux-services';
 import {setDocumentTitle} from '../../../utils/document-title.js';
+import '../../../widgets/build-agent-chat.js';
 
 // Each step is a () => i18n.getMessage('<literal>') getter (see toc.js for
 // why: the build's extractor only captures string literals passed directly
@@ -645,6 +646,9 @@ export default class IntegrationHubPage extends AIUXElement {
             ${i18n.getMessage('Continue to Zero Copy Connectors')}
           </a>
         </section>
+
+        <wdf-build-agent-chat></wdf-build-agent-chat>
+
 
         <a class="aiux-btn aiux-btn-outline w-fit" href="${basePath}/home">
           ${i18n.getMessage('Take me back to main page')}

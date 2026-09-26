@@ -91,7 +91,7 @@ export default {
         unifiedExperience: false,
         profile: true,
         helpPanel: true,
-        chat: true
+        chat: false
       },
       items: buildNavItems(activeRoute),
       defaultLogoFull: 'servicenow',

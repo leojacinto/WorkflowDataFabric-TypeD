@@ -3,6 +3,7 @@ import {customElement} from 'lit/decorators.js';
 import {AIUXElement} from '@servicenow/aiux/aiux-components-core';
 import {i18n} from '@servicenow/aiux/aiux-services';
 import {setDocumentTitle} from '../../../utils/document-title.js';
+import '../../../widgets/build-agent-chat.js';
 
 const DATA_SOURCE_STEPS = [
   {text: () => i18n.getMessage('Go to All, search for Data Sources.'), image: 'sc_data_source_start.png'},
@@ -576,6 +577,9 @@ export default class KafkaStreamConnectPage extends AIUXElement {
             )}
           </p>
         </section>
+
+        <wdf-build-agent-chat></wdf-build-agent-chat>
+
 
         <a class="aiux-btn aiux-btn-outline w-fit" href="${basePath}/home">
           ${i18n.getMessage('Take me back to main page')}

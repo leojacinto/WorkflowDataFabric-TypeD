@@ -9,6 +9,10 @@ declare global {
                         table: 'sys_aix_color_swatch'
                         id: '3eb64c1b9148bf302111fca9fd31e2bb'
                     }
+                    'aiux-dependency|build-agent-chat.js': {
+                        table: 'sys_aix_dependency'
+                        id: '19952c035770a3696c8f1d85e4c007cc'
+                    }
                     'aiux-dependency|document-title.js': {
                         table: 'sys_aix_dependency'
                         id: '4dda3c22972cde5ff3bb7de2044d2277'
@@ -109,6 +113,10 @@ declare global {
                         table: 'sys_aix_m2m_widget_dependency'
                         id: '14033d724c04b60c8e4917a542f507e5'
                     }
+                    'aiux-m2m-widget-dep|x-snc-wdf-lab-external-content-connector-page|build-agent-chat.js': {
+                        table: 'sys_aix_m2m_widget_dependency'
+                        id: '50d32132d7523cb72f5fb92fca402f07'
+                    }
                     'aiux-m2m-widget-dep|x-snc-wdf-lab-external-content-connector-page|document-title.js': {
                         table: 'sys_aix_m2m_widget_dependency'
                         id: 'c3a4b098c8a9dd1868ce65faf49a8e85'
@@ -120,6 +128,10 @@ declare global {
                     'aiux-m2m-widget-dep|x-snc-wdf-lab-for-facilitators-page|document-title.js': {
                         table: 'sys_aix_m2m_widget_dependency'
                         id: '89fb7dc97d349cc9e1b2edf49d3ee76f'
+                    }
+                    'aiux-m2m-widget-dep|x-snc-wdf-lab-fundamentals-page|build-agent-chat.js': {
+                        table: 'sys_aix_m2m_widget_dependency'
+                        id: '2caf568613c2e1824a7e53907cc7b9af'
                     }
                     'aiux-m2m-widget-dep|x-snc-wdf-lab-fundamentals-page|document-title.js': {
                         table: 'sys_aix_m2m_widget_dependency'
@@ -133,9 +145,17 @@ declare global {
                         table: 'sys_aix_m2m_widget_dependency'
                         id: 'd3d6485fc471ff14e8104481dfbf0226'
                     }
+                    'aiux-m2m-widget-dep|x-snc-wdf-lab-integration-hub-page|build-agent-chat.js': {
+                        table: 'sys_aix_m2m_widget_dependency'
+                        id: 'f52d8ec55de44a2579ccc5622a30e698'
+                    }
                     'aiux-m2m-widget-dep|x-snc-wdf-lab-integration-hub-page|document-title.js': {
                         table: 'sys_aix_m2m_widget_dependency'
                         id: '7d35ce4c7921ae0aefc7408adca26c4e'
+                    }
+                    'aiux-m2m-widget-dep|x-snc-wdf-lab-kafka-stream-connect-page|build-agent-chat.js': {
+                        table: 'sys_aix_m2m_widget_dependency'
+                        id: 'd2d66d835f0a79998d426b4dd2eecb14'
                     }
                     'aiux-m2m-widget-dep|x-snc-wdf-lab-kafka-stream-connect-page|document-title.js': {
                         table: 'sys_aix_m2m_widget_dependency'
@@ -145,9 +165,17 @@ declare global {
                         table: 'sys_aix_m2m_widget_dependency'
                         id: 'f228126f5d3c6d7a12c495821f9a09ac'
                     }
+                    'aiux-m2m-widget-dep|x-snc-wdf-lab-lens-and-document-intelligence-page|build-agent-chat.js': {
+                        table: 'sys_aix_m2m_widget_dependency'
+                        id: '757263e8f5ee95ec7d5f00f1218fc427'
+                    }
                     'aiux-m2m-widget-dep|x-snc-wdf-lab-lens-and-document-intelligence-page|document-title.js': {
                         table: 'sys_aix_m2m_widget_dependency'
                         id: '19f88b562aab282397cc7f31faec1eed'
+                    }
+                    'aiux-m2m-widget-dep|x-snc-wdf-lab-mcp-server-client-page|build-agent-chat.js': {
+                        table: 'sys_aix_m2m_widget_dependency'
+                        id: '5dba3211b57ffa793d3f905acc1ef0c9'
                     }
                     'aiux-m2m-widget-dep|x-snc-wdf-lab-mcp-server-client-page|document-title.js': {
                         table: 'sys_aix_m2m_widget_dependency'
@@ -156,6 +184,10 @@ declare global {
                     'aiux-m2m-widget-dep|x-snc-wdf-lab-troubleshooting-page|document-title.js': {
                         table: 'sys_aix_m2m_widget_dependency'
                         id: 'e42ca7f7f661a12ec67c348c55832ca6'
+                    }
+                    'aiux-m2m-widget-dep|x-snc-wdf-lab-zero-copy-connectors-page|build-agent-chat.js': {
+                        table: 'sys_aix_m2m_widget_dependency'
+                        id: 'c8940abc620f6ef9924e0f3049a8fef9'
                     }
                     'aiux-m2m-widget-dep|x-snc-wdf-lab-zero-copy-connectors-page|document-title.js': {
                         table: 'sys_aix_m2m_widget_dependency'
